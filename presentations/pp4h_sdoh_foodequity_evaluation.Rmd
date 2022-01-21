@@ -1,0 +1,54 @@
+---
+title: "PP4H SDoH Food Equity Program Evaluation"
+author: "PP4H"
+date: "4/2/2021"
+output: slidy_presentation
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+
+BaselineData_2019_maywood <- BaselineData_2019_geom %>% st_drop_geometry()
+
+write_clip(BaselineData_2019_maywood)
+write_clip(vitalstatistics_Maywood)
+
+
+# import tables
+produce_donations <- read_excel("../data/PP4H_ScaleData.xlsx", sheet="produce_donations") %>%
+  mutate(year=format(as.Date(as.character(year), "%Y"),"%Y"),
+         month=format(as.Date(month, "%B"), "%B"))
+
+
+
+
+```
+
+## Project Description
+
+Proviso Partners for Health is undertaking a systematic evaluation of its food equity programs.
+
+The evaluation is supported by the Center for Disease Control (CDC) for the purpose of informing CDC, NACCHO, and ASTHO about the barriers and opportunities associated with  multisector coalitions.
+
+Resources: 
+<http://rmarkdown.rstudio.com>
+<https://www.provisopartners.com>
+
+## Slide with Bullets
+
+- Bullet 1
+- Bullet 2
+- Bullet 3
+
+## Slide with R Output
+
+```{r cars, echo = TRUE}
+summary(cars)
+```
+
+## Slide with Plot
+
+```{r pressure}
+plot(pressure)
+```
+

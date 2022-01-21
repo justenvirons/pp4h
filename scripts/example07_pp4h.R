@@ -5,7 +5,7 @@
 ## entered into PRISM simulation model
 ## Author: C. Scott Smith, PhD AICP
 ## Date Created: 2021-03-11
-## Date Last Updated: 2021-03-17
+## Date Last Updated: 2021-04-02
 ## Email: christopher.smith@cookcountyhealth.org
 ## ---------------------------
 ##
@@ -110,4 +110,9 @@ BaselineData_2019_geom <- IL_Places_geom %>%
          POPDENS=Total/SQMI,
          PCT65OVER = Pop65Over/Total*100)
 plot(BaselineData_2019_geom['GEOID'])
+
+
+produce_donations <- read_excel("../data/PP4H_ScaleData.xlsx", sheet="produce_donations") %>%
+  mutate(year=format(as.Date(as.character(year), "%Y"),"%Y"),
+         month=format(as.Date(month, "%B"), "%B"))
 
